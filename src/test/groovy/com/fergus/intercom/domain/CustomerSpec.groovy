@@ -5,7 +5,7 @@ import spock.lang.Specification
 /**
  * Unit tests for Customer POJO
  * 
- * @author fergus
+ * @author kavanaghf
  *
  */
 class CustomerSpec extends Specification{

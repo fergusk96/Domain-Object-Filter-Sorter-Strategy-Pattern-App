@@ -1,6 +1,7 @@
 package com.fergus.intercom.service.sortfilter
 
 import com.fergus.intercom.domain.IDomainObject
+import com.fergus.intercom.exception.ConfigNotFoundException
 
 import spock.lang.Specification
 
