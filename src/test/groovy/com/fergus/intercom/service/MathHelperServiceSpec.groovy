@@ -37,20 +37,20 @@ class MathHelperServiceSpec extends Specification {
 
 
 		when: "haversineDistance is called on coordinates"
-		def haversineDistance = mathHelperService.haversineDistance(INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE,LONDON_LATITUDE,LONDON_LONGITUDE)
+			def haversineDistance = mathHelperService.haversineDistance(INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE,LONDON_LATITUDE,LONDON_LONGITUDE)
 
 		then: "returned distance is correct within a margin of error"
-		Math.abs(haversineDistance - INTERCOM_LONDON_ACTUAL_DISTANCE_IN_KMS) < ALLOWED_ERROR_IN_KMS;
+			Math.abs(haversineDistance - INTERCOM_LONDON_ACTUAL_DISTANCE_IN_KMS) < ALLOWED_ERROR_IN_KMS;
 	}
 
 	def "TEST haversineDistance is associative - Distance from Dublin to London = Distance from London to Dublin"(){
 		given: "mathHelperService instanciated, coordinates of two locations known and actual distance known"
 
 		when: "haversineDistance is called twice, changing order in which arguments are passed"
-		def haversineDistance1 = mathHelperService.haversineDistance(INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE,LONDON_LATITUDE,LONDON_LONGITUDE)
-		def haversineDistance2 = mathHelperService.haversineDistance(LONDON_LATITUDE,LONDON_LONGITUDE,INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE)
+			def haversineDistance1 = mathHelperService.haversineDistance(INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE,LONDON_LATITUDE,LONDON_LONGITUDE)
+			def haversineDistance2 = mathHelperService.haversineDistance(LONDON_LATITUDE,LONDON_LONGITUDE,INTERCOM_DUBLIN_LATITUDE,INTERCOM_DUBLIN_LONGITUDE)
 
 		then: "haversineDistance method returns same value in both cases"
-		haversineDistance1 == haversineDistance2
+			haversineDistance1 == haversineDistance2
 	}
 }

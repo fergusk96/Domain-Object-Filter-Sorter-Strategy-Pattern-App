@@ -19,35 +19,35 @@ class CustomerSpec extends Specification{
 	def "Test getters and setters for POJO"(){
 		given: "Customer Object initialisated and fields set"
 		def Customer customer = new Customer();
-		customer.setName(TEST_NAME)
-		customer.setLongitude(TEST_LONGITUDE)
-		customer.setLatitude(TEST_LATITUDE)
-		customer.setUserId(TEST_USERID) 
+			customer.setName(TEST_NAME)
+			customer.setLongitude(TEST_LONGITUDE)
+			customer.setLatitude(TEST_LATITUDE)
+			customer.setUserId(TEST_USERID) 
 
 		when: "Getters are called on object"
-		def customerName = customer.getName()
-		def customerLatitude = customer.getLatitude()
-		def customerLongitude = customer.getLongitude()
-		def customerId = customer.getUserId();
+			def customerName = customer.getName()
+			def customerLatitude = customer.getLatitude()
+			def customerLongitude = customer.getLongitude()
+			def customerId = customer.getUserId();
 
 		then: "Getters return the expected result"
-		customerName == TEST_NAME 
-		customerLatitude == TEST_LATITUDE
-		customerLongitude == TEST_LONGITUDE
-		customerId == TEST_USERID
+			customerName == TEST_NAME 
+			customerLatitude == TEST_LATITUDE
+			customerLongitude == TEST_LONGITUDE
+			customerId == TEST_USERID
 		
 	}
 	
 	def "TEST toString() - returns userid and name separated by comma"(){
 		given: "A customer object with id and name"
-		def customer = new Customer()
-		customer.setName(TEST_NAME);
-		customer.setUserId(TEST_USERID) 
+			def customer = new Customer()
+			customer.setName(TEST_NAME);
+			customer.setUserId(TEST_USERID) 
 		
 		when: "toString method is called on Customer"
-		def customerString = customer.toString();
+			def customerString = customer.toString();
 		
 		then: "returns userid and name separated by comma"
-		customerString == TEST_NAME +", "+TEST_USERID
+			customerString == TEST_NAME +", "+TEST_USERID
 	}
 }

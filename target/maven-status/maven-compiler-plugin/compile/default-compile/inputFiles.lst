@@ -1,0 +1,14 @@
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/filereader/IFileReaderService.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/sortfilter/DomainObjectFilterAndSortExecutor.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/exception/ConfigNotFoundException.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/filereader/FileReaderServiceExecutor.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/MathHelperService.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/App.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/exception/DomainObjectNotCorrectFormatException.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/sortfilter/IDomainFilterAndSortService.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/sortfilter/CustomerFilterAndSortService.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/objectmapper/DomainObjectMapperServiceExecutor.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/modules/BasicIntercomModule.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/domain/IDomainObject.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/domain/Customer.java
+/home/fergus/INTERCOM_WORKSPACE/intercom/src/main/java/com/fergus/intercom/service/filereader/LocalFileReaderService.java

@@ -32,28 +32,28 @@ class FileReaderServiceExecutorSpec extends Specification {
 		given: "fileReaderServiceExecutor has been injected into class"
 				
 		when: "the number of elements in the map is class map is checked"
-		def mapSize = fileReaderServiceExecutor.getMap().size()
+			def mapSize = fileReaderServiceExecutor.getMap().size()
 		
 		then: "the map size is equal to 1"
-		mapSize == 1;
+			mapSize == 1;
 	}
 
 	def "TEST when config value is set to string contained in map, corresponding readerService is executed"(){
 		given: "fileReaderServiceExecutor has been injected into class, file type in config is local"
 
-		fileReaderServiceExecutor = new TestFileReaderServiceExecutor();
+			fileReaderServiceExecutor = new TestFileReaderServiceExecutor();
 
 		when: "executeRead method is called"
-		def listOfDomainObjects = fileReaderServiceExecutor.executeRead()
+			def listOfDomainObjects = fileReaderServiceExecutor.executeRead()
 
 		then: "Correct implementation of executeRead is called"
-		fileReaderServiceExecutor.getFileReaderServiceImplementation().getClass() == TestFileReaderService.class
-		listOfDomainObjects.get(0) == TEST_ARRAYlIST_ELEMENT;
+			fileReaderServiceExecutor.getFileReaderServiceImplementation().getClass() == TestFileReaderService.class
+			listOfDomainObjects.get(0) == TEST_ARRAYlIST_ELEMENT;
 	}
 
 	def "NEG TEST when config returns string not in map error is thrown"(){
 		given: "fileReaderServiceExecutor has been injected into class, file type in config is string that does not correspond to any implementation of fileReaderService"
-		fileReaderServiceExecutor = new TestFileReaderServiceExecutor() {
+			fileReaderServiceExecutor = new TestFileReaderServiceExecutor() {
 					@Override
 					protected String getFileReaderTypeConfigValue() {
 						return "doesn't exist in map";
@@ -61,10 +61,10 @@ class FileReaderServiceExecutorSpec extends Specification {
 				}
 
 		when: "executeRead method is called"
-		def listOfDomainObjects = fileReaderServiceExecutor.executeRead()
+			def listOfDomainObjects = fileReaderServiceExecutor.executeRead()
 
 		then: "Correct service class (local) is returned"
-		thrown ConfigNotFoundException
+			thrown ConfigNotFoundException
 	}
 
 	

@@ -30,24 +30,26 @@ class CustomerFilterAndSortServiceSpec extends Specification {
 	def "TEST apply filter to customer list"(){
 
 		given:"Two customers in map, one that should be filtered, one should not"
-		Customer customer1 = Stub(Customer.class);
-		Customer customer2 = Stub(Customer.class);
 
-		customer1.userId >> 1
-		customer2.userId >> 2
-
-
-		List<Customer> customerList = new ArrayList();
-		customerList.add(customer1);
-		customerList.add(customer2);
-
-		customerFilterAndSortService = new CustomerFilterAndSortService(){
-					@Override
-					protected boolean distanceToOfficeIsLessThanFilterValue(Customer customer){
-						return (customer.getUserId().equals(1));
-					}
+				customerFilterAndSortService = new CustomerFilterAndSortService(){
+				@Override
+				protected boolean distanceToOfficeIsLessThanFilterValue(Customer customer){
+					return (customer.getUserId().equals(1));
 				}
+			}
 
+			Customer customer1 = Stub(Customer.class);
+			Customer customer2 = Stub(Customer.class);
+
+			customer1.userId >> 1
+			customer2.userId >> 2
+
+
+			List<Customer> customerList = new ArrayList();
+			customerList.add(customer1);
+			customerList.add(customer2);
+	
+			
 		when: "applyFilterToCustomers is called"
 		def filteredList = customerFilterAndSortService.applyFilterToCustomers(customerList)
 

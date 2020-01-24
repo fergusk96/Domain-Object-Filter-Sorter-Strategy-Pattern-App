@@ -35,44 +35,45 @@ class DomainObjectMapperServiceExecutorSpec extends Specification {
 		given: "objectMapperServiceExecutor has been injected into class"
 
 		when: "the number of elements in the map is class map is checked"
-		def mapSize = objectMapperServiceExecutor.getMap().size()
+			def mapSize = objectMapperServiceExecutor.getMap().size()
 
 		then: "the map size is equal to 1"
-		mapSize == 1;
+			mapSize == 1;
 	}
 
 	def "TEST getDomainObjectList - correct implementation chosen"(){
 		given: "objectMapperServiceExecutor has been injected into class, value and corresponding class implemention exist in map"
 
-		objectMapperServiceExecutor = new TestObjectMapperServiceExecutor();
+			objectMapperServiceExecutor = new TestObjectMapperServiceExecutor();
 
 		when: "The service is passed a list of domain objects represented as a JSON String"
-
-		List<String> domainObjectListAsString = new ArrayList();
-		domainObjectListAsString.add("{\"user_id\": 12}")
+	
+			List<String> domainObjectListAsString = new ArrayList();
+			domainObjectListAsString.add("{\"user_id\": 12}")
+			
 		def domainObjectList = objectMapperServiceExecutor.getDomainObjectList(domainObjectListAsString)
 
 		then: "String is mapped to domain object as expected"
-		domainObjectList.size() == 1;
-		(domainObjectList.get(0) instanceof TestDomainObject) == true;
-		domainObjectList.get(0).userId == 12;
+			domainObjectList.size() == 1;
+			(domainObjectList.get(0) instanceof TestDomainObject) == true;
+			domainObjectList.get(0).userId == 12;
 	}
 
 
 	def "NEG TEST when config returns string not in map error is thrown"(){
 		given: "objectMapperExecutorService has been injected into class, domainObject in config is string that does not correspond to any mapper"
-		objectMapperServiceExecutor = new TestObjectMapperServiceExecutor() {
-					protected String getDomainObjectConfigValue() {
-
-						return "doesn't exist in map";
+			objectMapperServiceExecutor = new TestObjectMapperServiceExecutor() {
+						protected String getDomainObjectConfigValue() {
+	
+							return "doesn't exist in map";
+						}
 					}
-				}
 
 		when: "executeRead method is called"
-		def listOfDomainObjects = objectMapperServiceExecutor.getDomainObjectList(null)
+			def listOfDomainObjects = objectMapperServiceExecutor.getDomainObjectList(null)
 
 		then: "Correct service class (local) is returned"
-		thrown ConfigNotFoundException
+			thrown ConfigNotFoundException
 	}
 
 

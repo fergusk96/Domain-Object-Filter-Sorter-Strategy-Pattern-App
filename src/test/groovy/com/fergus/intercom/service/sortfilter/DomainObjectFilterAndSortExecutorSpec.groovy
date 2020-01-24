@@ -25,22 +25,22 @@ class DomainObjectFilterAndSortExecutorSpec extends Specification {
 		given: "domainObjectSortAndFilterExecutor has been injected into class"
 
 		when: "the number of elements in the map is class map is checked"
-		def mapSize = domainObjectFilterAndSortExecutor.getMap().size()
+			def mapSize = domainObjectFilterAndSortExecutor.getMap().size()
 
 		then: "the map size is equal to 1"
-		mapSize == 1;
+			mapSize == 1;
 	}
 
 	def "TEST when config is set to string contained in map, corresponding DomainObjectSortAndFilterService is executed"(){
 		given: "DomainObjectSortAndFilterService has been injected into class"
 
-		domainObjectFilterAndSortExecutor = new TestDomainObjectSortAndFilterExecutor();
+			domainObjectFilterAndSortExecutor = new TestDomainObjectSortAndFilterExecutor();
 
 		when: "getDomainSortAndFilterServiceInstance method is called"
-		def domainSortAndFilterImplementation = domainObjectFilterAndSortExecutor.getDomainSortAndFilterServiceInstance(TEST_DOMAIN_OBJECT)
+			def domainSortAndFilterImplementation = domainObjectFilterAndSortExecutor.getDomainSortAndFilterServiceInstance(TEST_DOMAIN_OBJECT)
 
 		then: "Correct implementation DomainObjectSortAndFilterService is returned"
-		domainSortAndFilterImplementation.getClass() == TestDomainFilterAndSortService.class
+			domainSortAndFilterImplementation.getClass() == TestDomainFilterAndSortService.class
 	}
 
 
