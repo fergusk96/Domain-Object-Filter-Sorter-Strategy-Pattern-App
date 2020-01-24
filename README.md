@@ -10,6 +10,12 @@ New strategies for sorting and filtering customer objects may also be implemente
 
 File reading may also be determined by a strategy and specified by the configuration filereader.type. The only current implementation is a local file reading strategy - reading remote files will be added at a future date.  
 
+Classes have been extensively tested, using both unit and integration tests. 
+
+Tests are written in groovy using the Spock framework. The Spock framework allows us to write tests in a BDD style, making them easily linked to Acceptance Criteria.
+
+A scripting language like groovy makes testing quicker and more flexible
+
 ### Running project
 
 The project is built using Apache Maven 
