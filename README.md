@@ -24,4 +24,6 @@ Once the jar is executed, the sorted filtered customers.txt file will be used to
 
 **Note that a pre-built jar built with all depedencies (including customers.txt and application.properties) has been included as part of this project. Simply clone project and run this jar if you do not seek to make any modifications to configuration or files to be read**
 
+Of course, the project can also be imported into an IDE as a maven project and run from there (Only tested in Eclipse)
+
 
