@@ -28,6 +28,12 @@ Files to be read must be placed in the src/main/resources folder before packagin
 
 Once the jar is executed, the sorted filtered customers.txt file will be used to generate a output.txt file in the same directory where the .jar file lives. 
 
+### Tests
+
+To run tests simply run mvn test from the base project directory.
+
+Alternatively, run as Junit test from IDE
+
 **Note that a pre-built jar built with all depedencies (including customers.txt and application.properties) has been included as part of this project. Simply clone project and run this jar if you do not seek to make any modifications to configuration or files to be read**
 
 Of course, the project can also be imported into an IDE as a maven project and run from there (Only tested in Eclipse)
