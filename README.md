@@ -10,11 +10,6 @@ New strategies for sorting and filtering customer objects may also be implemente
 
 File reading may also be determined by a strategy and specified by the configuration filereader.type. The only current implementation is a local file reading strategy - reading remote files will be added at a future date.  
 
-Classes have been extensively tested, using both unit and integration tests. 
-
-Tests are written in groovy using the Spock framework. The Spock framework allows us to write tests in a BDD style, making them easily linked to Acceptance Criteria.
-
-A scripting language like groovy makes testing quicker and more flexible
 
 ### Running project
 
@@ -33,6 +28,13 @@ Once the jar is executed, the sorted filtered customers.txt file will be used to
 Of course, the project can also be imported into an IDE as a maven project and run from there (Only tested in Eclipse)
 
 ### Tests
+
+
+Classes have been extensively tested, using both unit and integration tests. Tests can be found in the src/test/groovy folder and src/integrationTest/groovy folder
+
+Tests are written in groovy using the Spock framework. The Spock framework allows us to write tests in a BDD style, making them easily linked to Acceptance Criteria.
+
+A scripting language like groovy makes testing quicker and more flexible
 
 To run tests simply run mvn test from the base project directory.
 
