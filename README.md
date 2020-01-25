@@ -30,7 +30,7 @@ Of course, the project can also be imported into an IDE as a maven project and r
 ### Tests
 
 
-Classes have been extensively tested, using both unit and integration tests. Tests can be found in the src/test/groovy folder and src/integrationTest/groovy folder
+Classes have been extensively tested, using both unit and integration tests. Tests can be found in the src/test/groovy folder and src/integrationTest/groovy folder.
 
 Tests are written in groovy using the Spock framework. The Spock framework allows us to write tests in a BDD style, making them easily linked to Acceptance Criteria.
 
